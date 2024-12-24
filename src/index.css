@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("/src/assets/Geist-Medium.ttf");
+}
+
+@font-face {
+  font-family: "MyCustomFont-bold";
+  src: url("/src/assets/Geist-Bold.ttf");
+}
