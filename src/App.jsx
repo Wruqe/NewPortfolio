@@ -126,7 +126,8 @@ function App() {
       <img
         src={background}
         alt="Background"
-        className="fixed inset-0 w-full h-full object-cover  -z-10"
+        className="fixed inset-0 w-screen h-screen object-cover -z-10 scale-110"
+        style={{ transform: "scale(1.1)" }}
       />
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 flex justify-center items-center p-6 w-full z-50 ">
