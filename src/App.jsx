@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import background from "./assets/background.png";
 import "./App.css";
+import PropTypes from "prop-types";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -112,6 +113,11 @@ function App() {
     </button>
   );
 
+  NavLink.propTypes = {
+    to: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+  };
+
   const PageLink = ({ to, children }) => (
     <button
       onClick={() => scrollToSection(to)}
@@ -120,6 +126,11 @@ function App() {
       {children}
     </button>
   );
+
+  PageLink.propTypes = {
+    to: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+  };
 
   return (
     <div className="min-h-screen text-white">
@@ -130,8 +141,8 @@ function App() {
         style={{ transform: "scale(1.1)" }}
       />
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 flex justify-center items-center p-6 w-full z-50 ">
-        <div className="flex gap-8">
+      <nav className="fixed top-0 left-0 right-0 flex justify-center items-center p-4 md:p-6 w-full z-50">
+        <div className="flex gap-4 md:gap-8">
           <NavLink to="home">HOME</NavLink>
           <NavLink to="projects">PROJECTS</NavLink>
           <NavLink to="work-exp">WORK EXP</NavLink>
@@ -145,27 +156,27 @@ function App() {
         className="min-h-screen flex items-center justify-center py-20"
       >
         <motion.div
-          className="flex flex-col w-full max-w-7xl px-8"
+          className="flex flex-col w-full max-w-7xl px-4 md:px-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="relative">
-            <h1 className="tracking-tighter font-custom text-left text-white text-[180px] pb-2">
+          <div className="relative mb-32 md:mb-0">
+            <h1 className="tracking-tighter font-custom text-left text-white text-[80px] md:text-[180px] pb-2">
               ERNEST
             </h1>
-            <div className="absolute -bottom-4 left-2 flex flex-row gap-4">
+            <div className="absolute -bottom-24 md:-bottom-4 left-2 flex flex-row gap-2 md:gap-4">
               <PageLink to="projects">projects →</PageLink>
               <PageLink to="contact">contact →</PageLink>
               <PageLink to="work-exp">work exp →</PageLink>
             </div>
           </div>
-          <div className="flex justify-end mt-1">
+          <div className="flex justify-end mt-8 md:mt-1">
             <div className="max-w-xl relative">
-              <h1 className="tracking-tighter font-custom text-white text-[180px]">
+              <h1 className="tracking-tighter font-custom text-white text-[80px] md:text-[180px]">
                 JONES
               </h1>
-              <p className="absolute -bottom-10 text-white text-lg leading-relaxed font-custom text-[16px]">
+              <p className="relative md:absolute md:-bottom-10 text-white text-sm md:text-lg leading-relaxed font-custom md:text-[16px] max-w-[300px] md:max-w-none mt-4 md:mt-0">
                 specialized in scaling full-stack applications with a focus on
                 performance optimization, secure integrations, and intuitive
                 design.
@@ -177,25 +188,27 @@ function App() {
 
       <section
         id="projects"
-        className="min-h-screen flex flex-col items-center justify-center py-20"
+        className="min-h-screen flex flex-col items-center justify-center py-20 px-4 md:px-8"
       >
-        <h2 className="text-6xl font-custom mb-12 text-white">
+        <h2 className="text-4xl md:text-6xl font-custom mb-12 text-white">
           Personal Projects
         </h2>
 
-        <div className="grid grid-cols-1 gap-8 max-w-5xl w-full">
+        <div className="grid grid-cols-1 gap-8 w-full max-w-5xl">
           {projects.map((project) => (
             <div
               key={project.title}
               className="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300"
             >
-              <div className="p-8">
+              <div className="p-4 md:p-8">
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                <div className="flex flex-col gap-4 mb-6">
                   <div>
-                    <div className="flex items-center gap-3">
-                      <h3 className="text-2xl font-custom">{project.title}</h3>
-                      <span className="text-sm font-custom px-3 py-1 bg-white/10 rounded-full text-gray-300">
+                    <div className="flex flex-col md:flex-row md:items-center gap-3">
+                      <h3 className="text-xl md:text-2xl font-custom">
+                        {project.title}
+                      </h3>
+                      <span className="text-sm font-custom px-3 py-1 bg-white/10 rounded-full text-gray-300 w-fit">
                         {project.date}
                       </span>
                     </div>
@@ -287,9 +300,11 @@ function App() {
 
       <section
         id="work-exp"
-        className="min-h-screen flex flex-col items-center justify-center py-20"
+        className="min-h-screen flex flex-col items-center justify-center py-20 px-4 md:px-8"
       >
-        <h2 className="text-6xl font-custom mb-12">Work Experience</h2>
+        <h2 className="text-4xl md:text-6xl font-custom mb-12">
+          Work Experience
+        </h2>
         <div className="space-y-12 w-full max-w-5xl relative">
           <div className="absolute left-0 top-0 bottom-0 w-px bg-white/20"></div>
 
@@ -340,14 +355,14 @@ function App() {
 
       <section
         id="contact"
-        className="min-h-screen flex flex-col items-center justify-center py-20"
+        className="min-h-screen flex flex-col items-center justify-center py-20 px-4 md:px-8"
       >
-        <h2 className="text-6xl font-custom mb-12">Contact</h2>
+        <h2 className="text-4xl md:text-6xl font-custom mb-12">Contact</h2>
         <div className="space-y-6 w-full max-w-5xl flex flex-col items-center">
-          <p className="text-xl mb-8 text-center">
+          <p className="text-lg md:text-xl mb-8 text-center">
             Feel free to reach out to me at:
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6">
             <a
               href="mailto:ernest.jones30@yahoo.com"
               className="px-6 py-3 bg-white text-black rounded hover:bg-opacity-90 transition-colors text-xl flex items-center gap-3"
