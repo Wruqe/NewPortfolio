@@ -47,6 +47,8 @@ function App() {
         "This project was a fantastic opportunity to dive deep into full-stack development, combining the power of TypeScript and Angular. I designed and implemented a REST API with custom authentication middleware to ensure secure data access. To streamline data fetching and enhance user experience, I created reusable services and a frontend interceptor for token verification. By incorporating Row Level Security, I prioritized data privacy and protected sensitive information, ensuring that only authorized users can access relevant data.",
       date: " OCT 2024",
       tech: "TypeScript, Angular, Node.js, Express, PostgreSQL, Tailwind, Supabase",
+      githubLink: "https://github.com/Wruqe",
+      demoLink: "https://github.com/Wruqe",
     },
     {
       title: "GO RATE LIMITER",
@@ -55,6 +57,8 @@ function App() {
         " Designed a project that leverages the power of Go's concurrency primitives, specifically goroutines and channels, to implement a highly efficient IP rate limiter and redirector. The primary goal is to mitigate potential abuse and DDoS attacks by controlling the rate at which IP addresses can access a server.",
       date: " DEC 2024",
       tech: "Go, Goroutines, Concurrent Data Structures, Networking Libraries",
+      githubLink: "https://github.com/Wruqe",
+      demoLink: "https://github.com/Wruqe",
     },
     {
       title: "TECHLINES",
@@ -63,6 +67,8 @@ function App() {
         "Development of a comprehensive blogging platform using Node.js as the backend framework. I implemented RESTful APIs to handle user authentication, blog post creation, and comment management. Sequelize was utilized as an ORM to interact with a MySQL database, ensuring efficient data storage and retrieval. To enhance security, custom authentication middleware was developed to protect sensitive routes and user data. On the frontend, Handlebars templating engine was employed to create dynamic and user-friendly interfaces, enabling features like user registration, login, logout, profile viewing, blog post creation, commenting, and search functionality.",
       date: " DEC 2023",
       tech: "Node.js, JavaScript, Sequelize, Handlebars, MySQL",
+      githubLink: "https://github.com/Wruqe",
+      demoLink: "https://github.com/Wruqe",
     },
   ];
   useEffect(() => {
@@ -173,84 +179,159 @@ function App() {
         className="min-h-screen flex flex-col items-center justify-center py-20"
       >
         <h2 className="text-6xl font-custom mb-12 text-white">
-          {" "}
           Personal Projects
         </h2>
 
-        <div className="flex-row flex max-w-5xl min-h-[500px]">
-          <div className="flex flex-col gap-4">
-            {projects.map((project) => (
-              <div
-                key={project}
-                className="bg-white bg-opacity-10 p-6 rounded-lg"
-              >
-                <div className="flex flex-col  items-start w-full">
-                  <div className="flex flex-row  justify-between w-full">
-                    <h3 className="text-2xl font-custom">{project.title}</h3>
-                    <div className=" flex flex-row gap-4 justify-center items-center text-[24px] font-custom text-gray-300">
-                      {project.date}
-                      <svg
-                        width="1024"
-                        height="1024"
-                        viewBox="0 0 1024 1024"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="size-6 sm:size-8"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z"
-                          transform="scale(64)"
-                          fill="white"
-                        ></path>
-                      </svg>
+        <div className="grid grid-cols-1 gap-8 max-w-5xl w-full">
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              className="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300"
+            >
+              <div className="p-8">
+                {/* Header */}
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <h3 className="text-2xl font-custom">{project.title}</h3>
+                      <span className="text-sm font-custom px-3 py-1 bg-white/10 rounded-full text-gray-300">
+                        {project.date}
+                      </span>
                     </div>
+                    <span className="text-sm text-gray-400 font-custom mt-2 block">
+                      {project.type}
+                    </span>
                   </div>
-                  <h3 className="text-lg font-custom mb-4 text-gray-300">
-                    {project.type}
-                  </h3>
 
-                  <img src={project.image} alt="" />
+                  {/* Project Links */}
+                  <div className="flex gap-3 z-10">
+                    <a
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
+                      title="View Profile"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                    </a>
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer z-10"
+                      title="View GitHub"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 transition-transform group-hover:scale-110"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
-                <div></div>
-                <li className="text-gray-300 w-full">{project.description}</li>
-                <p className="text-gray-300 w-full mt-2">
-                  Technologies: {project.tech}
+
+                {/* Description */}
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  {project.description}
                 </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.split(", ").map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300 border border-white/10"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
+
+              {/* Gradient border effect on hover */}
+              <div
+                className="absolute inset-0 border-2 border-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"
+                style={{
+                  background: `linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0)) border-box`,
+                  WebkitMask:
+                    "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
+                  WebkitMaskComposite: "destination-out",
+                  maskComposite: "exclude",
+                }}
+              />
+            </div>
+          ))}
         </div>
       </section>
 
       <section
         id="work-exp"
-        className="min-h-screen flex flex-col items-center justify-center py-20 "
+        className="min-h-screen flex flex-col items-center justify-center py-20"
       >
         <h2 className="text-6xl font-custom mb-12">Work Experience</h2>
-        <div className="space-y-6 w-full max-w-5xl">
+        <div className="space-y-12 w-full max-w-5xl relative">
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-white/20"></div>
+
           {workExp.map((job) => (
-            <div key={job} className="bg-white bg-opacity-10 p-6 rounded-lg">
-              <div className="flex flex-row justify-between w-full">
-                <h3 className="text-2xl font-custom mb-2">{job.company}</h3>
-                <h3 className="text-lg font-custom mb-2 text-gray-300">
-                  {job.date}
-                </h3>
+            <div key={job} className="relative pl-8">
+              <div className="absolute left-[-5px] top-0 w-[10px] h-[10px] rounded-full bg-white"></div>
+
+              <div className="mb-6">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+                  <h3 className="text-3xl font-custom text-white">
+                    {job.company}
+                  </h3>
+                  <span className="text-sm font-custom px-3 py-1 bg-white/10 rounded-full text-gray-300">
+                    {job.date}
+                  </span>
+                </div>
+                <h4 className="text-xl mt-2 text-gray-300 font-custom">
+                  {job.position}
+                </h4>
               </div>
-              <h4 className="text-xl mb-4 text-gray-300">{job.position}</h4>
-              <li className="text-gray-300">{job.description}</li>
-              <h4 className="text-xl mb-4 mt-4  text-gray-300">Achievements</h4>
-              <ul className="list-disc list-inside text-gray-300">
-                {job.achievements.map((achievement) => (
-                  <li
-                    key={achievement.description}
-                    className="text-gray-300 mb-4"
-                  >
-                    {achievement.description}
-                  </li>
-                ))}
-              </ul>
+
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                {job.description}
+              </p>
+
+              <div className="space-y-6">
+                <h4 className="text-xl font-custom text-white">
+                  Key Achievements
+                </h4>
+                <div className="grid gap-4">
+                  {job.achievements.map((achievement, index) => (
+                    <div
+                      key={index}
+                      className="group relative pl-6 transition-all hover:translate-x-2"
+                    >
+                      <div className="absolute left-0 top-[10px] w-2 h-2 rounded-full bg-white/50 group-hover:bg-white"></div>
+                      <p className="text-gray-300 leading-relaxed">
+                        {achievement.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
         </div>
