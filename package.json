@@ -29,5 +29,6 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "vite": "^5.4.10"
-  }
+  },
+  "homepage": "https://wruqe.github.io/NewPortfolio/"
 }

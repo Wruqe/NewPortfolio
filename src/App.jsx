@@ -47,7 +47,7 @@ function App() {
         "This project was a fantastic opportunity to dive deep into full-stack development, combining the power of TypeScript and Angular. I designed and implemented a REST API with custom authentication middleware to ensure secure data access. To streamline data fetching and enhance user experience, I created reusable services and a frontend interceptor for token verification. By incorporating Row Level Security, I prioritized data privacy and protected sensitive information, ensuring that only authorized users can access relevant data.",
       date: " OCT 2024",
       tech: "TypeScript, Angular, Node.js, Express, PostgreSQL, Tailwind, Supabase",
-      image: "https://postworkout.app",
+      image: "/NewPortfolio/postworkout.png",
     },
     {
       title: "GO RATE LIMITER",
@@ -56,7 +56,7 @@ function App() {
         " Designed a project that leverages the power of Go's concurrency primitives, specifically goroutines and channels, to implement a highly efficient IP rate limiter and redirector. The primary goal is to mitigate potential abuse and DDoS attacks by controlling the rate at which IP addresses can access a server.",
       date: " DEC 2024",
       tech: "Go, Goroutines, Concurrent Data Structures, Networking Libraries",
-      image: "https://postworkout.app",
+      image: "/NewPortfolio/postworkout.png",
     },
     {
       title: "TECHLINES",
@@ -65,7 +65,7 @@ function App() {
         "Development of a comprehensive blogging platform using Node.js as the backend framework. I implemented RESTful APIs to handle user authentication, blog post creation, and comment management. Sequelize was utilized as an ORM to interact with a MySQL database, ensuring efficient data storage and retrieval. To enhance security, custom authentication middleware was developed to protect sensitive routes and user data. On the frontend, Handlebars templating engine was employed to create dynamic and user-friendly interfaces, enabling features like user registration, login, logout, profile viewing, blog post creation, commenting, and search functionality.",
       date: " DEC 2023",
       tech: "Node.js, JavaScript, Sequelize, Handlebars, MySQL",
-      image: "https://postworkout.app",
+      image: "/NewPortfolio/postworkout.png",
     },
   ];
   useEffect(() => {
