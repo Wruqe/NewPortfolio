@@ -6,16 +6,43 @@ import PropTypes from "prop-types";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
-  const controls = useAnimation();
 
   const workExp = [
     {
+      company: "Gentex Corporation",
+      position: "Software Engineer Intern",
+      date: "APRIL 2025 – PRESENT",
+      description:
+        "Collaborated with the Product Lifecycle Management (PLM) team to enhance and maintain internal applications supporting production and engineering workflows.",
+      achievements: [
+        {
+          description:
+            "Built a full-featured internal Skills Finder module in an ASP.NET Core MVC SSR application, supporting complete CRUD operations. Designed controller logic to dynamically generate parameterized SQL queries with secure input handling, enabling advanced skill filtering, rating, and persistent state management backed by MSSQL.",
+        },
+        {
+          description:
+            "Implemented a hybrid frontend build system using Webpack with live reload and Hot Module Replacement (HMR), running on a local proxy. Served assets from memory to reduce full page reloads and disk writes, improving UI development speed and productivity by 50–70%.",
+        },
+        {
+          description:
+            "Developed full CRUD functionality backed by RESTful C# controllers and integrated AML (Aras Markup Language) to interact with PLM data models for managing engineering artifacts.",
+        },
+        {
+          description:
+            "Created SQL-based server-side methods and scheduled automated jobs using Quartz.NET and Cron expressions to run server maintenance and send weekly email digests.",
+        },
+        {
+          description:
+            "Worked across a diverse tech stack including: TypeScript, JavaScript, jQuery, HTML, CSS, Kendo UI, ASP.NET Core, C#, AML, Aras Innovator, REST APIs, JSON, AJAX, SQL, XML, Visual Basic, Visual Studio, Azure DevOps, Postman, and Git.",
+        },
+      ],
+    },
+    {
       company: "Owl Computing Development",
       position: "Software Engineer Intern",
-      date: "MARCH 2024 - PRESENT",
+      date: "MARCH 2024 - MARCH 2025",
       description:
         "Developed and maintained scalable web applications, worked React, Next.js, Angular, Tailwind, Node.js, TypeScript, Python. Maintained and building databases with PostgreSQL, MySQL, and Firebase.",
-
       achievements: [
         {
           description:
@@ -40,6 +67,7 @@ function App() {
       ],
     },
   ];
+
   const projects = [
     {
       title: "POST WORKOUT",
